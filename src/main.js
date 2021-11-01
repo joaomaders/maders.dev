@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import "../node_modules/bulma/css/bulma.css";
+import "../node_modules/reset-css/reset.css";
 
-createApp(App).mount('#app')
+import App from './App.vue'
+import router from './router'
+
+createApp(App).use(router).mount('#app')
