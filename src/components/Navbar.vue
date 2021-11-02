@@ -1,7 +1,7 @@
 <template>
 	<div ref="mainNavbar" class="main-navbar">
 		<div class="main-navbar-left">
-			<div class="main-navbar-logo"></div>
+			<router-link class="main-navbar-logo" to="/"></router-link>
 		</div>
 
 		<div class="main-navbar-right">
