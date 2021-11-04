@@ -29,9 +29,7 @@
 		</div>
 	</div>
 
-	<div class="navbar-mobile" :class="{ 'active' : navbarMobileShowing }">
-			{{ navbarMobileHeight }}
-	</div>
+	<div class="navbar-mobile" :class="{ 'active' : navbarMobileShowing }"></div>
 </template>
 
 <script>

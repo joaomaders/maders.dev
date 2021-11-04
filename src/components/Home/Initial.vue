@@ -1,9 +1,9 @@
 <template>
-    <div class="home-initial columns container">
-        <div class="home-initial-texts column is-6">
+    <div class="home-initial columns container is-multiline">
+        <div class="home-initial-texts column is-6-desktop is-12-mobile">
             <div class="home-initial-texts-title">
-                Soluções em TI <br>
-                <span>para você</span>
+                Lorem Ipsum dolor <br>
+                Para <span id="typewriter"></span>
             </div>
 
             <div class="home-initial-texts-subtitle">
@@ -11,12 +11,14 @@
             </div>
         </div>
 
-        <div ref="animation" class="home-initial-animation column is-6"></div>
+        <div ref="animation" class="home-initial-animation column is-6-desktop is-12-mobile"></div>
     </div>
 </template>
 
 <script>
     import lottie from 'lottie-web'
+
+    import Typewriter from 'typewriter-effect/dist/core';
 
     export default {
         mounted () {
@@ -28,6 +30,11 @@
                 path: '/animations/animation2.json'
             })
             animation.play();
+
+            new Typewriter('#typewriter', {
+                strings: ['você', 'mim'],
+                autoStart: true,
+            });
         }
     }
 </script>

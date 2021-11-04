@@ -1,16 +1,18 @@
 <template>
     <div>
-        <Initial />
-        
+        <!-- <Initial /> -->
+        <BlackAndWhite />
     </div>
 </template>
 
 <script>
-import Initial from '../components/Home/Initial.vue'
+// import Initial from '../components/Home/Initial.vue'
+import BlackAndWhite from '../components/BlackAndWhite.vue'
 
     export default {
         components: {
-            Initial
+            // Initial,
+            BlackAndWhite
         }
     }
     
