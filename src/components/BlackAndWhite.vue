@@ -2,13 +2,13 @@
     <div class="black-and-white-section">
         <div class="black-side half">
             <div class="text">
-                Qual é o e-mail que você mais usa atualmente? Coloque um email que você abre com frequência, pois vou te enviar algumas coisas importantes por lá.
+                {{ content }}
             </div>
         </div>
 
         <div class="white-side half">
             <div class="text">
-                Qual é o e-mail que você mais usa atualmente? Coloque um email que você abre com frequência, pois vou te enviar algumas coisas importantes por lá.
+                {{ content }}
             </div>
         </div>
     </div>
@@ -16,25 +16,36 @@
 
 <script>
     export default {
+        data () {
+            return {
+                content: "Coming soon"
+            }
+        }
         
     }
 </script>
 
 <style lang="scss" scoped>
-    $text-width: 300px;
-    $text-negative-margin: calc(-300px / 2);
+    $text-width: 50%;
+    $text-negative-margin: calc(-50% / 2);
+
+    $text-size: 60px;
+    $text-weight: 700;
 
     .black-and-white-section {
         display: flex;
-        height: 300px;
+        height: 100vh;
 
         .half {
+            text-align: center;
             overflow: hidden;
             display: flex;
+            align-items: center;
+            justify-content: center;
 
             .text {
-                font-size: 32px;
-                font-weight: 600;
+                font-size: $text-size;
+                font-weight: $text-weight;
                 width: $text-width;
             }
         }
@@ -48,6 +59,7 @@
             .text {
                 margin-right: $text-negative-margin;
                 color: #FFFFFF;
+                animation: animate-black-side 10s infinite;
             }
         }
 
@@ -60,6 +72,31 @@
             .text {
                 color: #000000;
                 margin-left: $text-negative-margin;
+                animation: animate-white-side 10s infinite;
+            }
+        }
+
+        @keyframes animate-white-side {
+            0% {
+                margin-left: -50%;
+            }
+            50% {
+                margin-left: 0px;
+            }
+            100% {
+                margin-left: -50%;
+            }
+        }
+
+        @keyframes animate-black-side {
+            0% {
+                margin-right: 0px;
+            }
+            50% {
+                margin-right: -50%;
+            }
+            100% {
+                margin-right: 0;
             }
         }
     }
