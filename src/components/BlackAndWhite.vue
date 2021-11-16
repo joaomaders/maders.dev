@@ -35,6 +35,7 @@
     .black-and-white-section {
         display: flex;
         height: 100vh;
+        margin-top: -50px;
 
         .half {
             text-align: center;

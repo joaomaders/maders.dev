@@ -29,7 +29,20 @@
 		</div>
 	</div>
 
-	<div class="navbar-mobile" :class="{ 'active' : navbarMobileShowing }"></div>
+	<div class="navbar-mobile" :class="{ 'active' : navbarMobileShowing }">
+		<router-link v-for="route in routes"
+			:key="route.path"
+			:to="route.path"
+			class="item" 
+			:id="`route-${route.name}`"
+			:class="{ 'selected': route.path === selectedRoute.path }"
+			@click="toggleNavbarMobileStatus"
+		>
+			<div>
+				{{ route.name }}
+			</div>
+		</router-link>
+	</div>
 </template>
 
 <script>
@@ -165,18 +178,34 @@ export default {
 
 		.navbar-mobile {
 			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: center;
+			gap: 30px;
 			width: 100vw;
-			background-color: red;
+
+			background-color: #FFFFFF;
 			position: fixed;
 			z-index: 9998;
 			right: -100vw;
 			bottom: 0;
 			transition: right .3s;
 			height: calc(100vh - 60px);
+			padding: 10%;
 
 			&.active {
 				right: 0;
 				transition: right .5s;
+			}
+
+			.item {
+				color: $black;
+				font-size: 17px;
+				font-weight: 600;
+
+				&.selected {
+					color: $main-color;
+				}
 			}
 		}
 	}
