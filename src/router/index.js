@@ -19,6 +19,11 @@ const routes = [
     name: "Sobre",
     component: About,
   },
+  {
+    path: "/property",
+    name: "Property",
+    component: Property,
+  },
 ];
 
 const router = createRouter({
